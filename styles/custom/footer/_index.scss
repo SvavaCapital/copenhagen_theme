@@ -1,0 +1,132 @@
+$footer-color-background: $color-surface-700;
+$footer-color-background-light: $color-surface;
+$footer-color-links: $color-primary;
+$footer-text-color-secondary: $color-text-on-secondary-medium-emphasis;
+
+.syfe-footer {
+  background-color: $footer-color-background;
+}
+
+.syfe-footer__top-section {
+  padding: $spacing-inset-l;
+}
+
+.syfe-footer__top-row {
+  margin-bottom: $spacing-stack-xl;
+}
+
+.syfe-footer__links {
+  color: $footer-color-links;
+  margin-right: $spacing-inline-l;
+}
+
+.syfe-footer__contact-caption {
+  color: $footer-color-links;
+  margin-bottom: 4px;
+}
+
+.syfe-footer__smedia-caption {
+  margin-right: $spacing-inline-s;
+}
+
+.syfe-footer__smedia-links {
+  margin-right: $spacing-inline-m;
+}
+
+.syfe-footer__signup-caption {
+  color: $footer-color-links;
+  margin-bottom: 12px;
+}
+
+#syfe-footer-subscribe-form {
+  display: flex;
+
+  > * {
+    flex: 1 0 0;
+  }
+
+  button {
+    flex: 0 0 auto;
+  }
+}
+
+.syfe-footer__signup-error {
+  color: $color-error-text;
+}
+
+.syfe-footer__contact-item {
+  line-height: 2;
+  color: $site-color-text-on-surface-medium-emphasis;
+}
+
+.syfe-footer__license-section {
+  padding: $spacing-inset-l;
+  background-color: $footer-color-background-light;
+}
+
+.syfe-footer__button {
+  margin-left: -5px;
+  padding: 0px $spacing-inset-l;
+  vertical-align: top;
+}
+
+.syfe-footer__license {
+  color: $site-color-text-on-surface-medium-emphasis;
+  &:not(:last-child) {
+    margin-bottom: $spacing-stack-m;
+  }
+}
+
+.syfe-footer__app-description {
+  color: $site-color-text-on-white-high-emphasis;
+}
+
+.syfe-footer__app-links {
+  margin-top: $spacing-stack-s;
+}
+
+.syfe-footer__app-link {
+  margin-right: $spacing-stack-s;
+}
+
+@media (max-width: $breakpoint-md) {
+  .syfe-footer__contact {
+    margin-bottom: $spacing-stack-l;
+  }
+
+  .syfe-footer__links-section {
+    margin-bottom: $spacing-stack-xl;
+  }
+
+  .syfe-footer__smedia-section {
+    text-align: center;
+  }
+
+  .syfe-footer__app-description {
+    text-align: center;
+    margin-top: $spacing-stack-m;
+  }
+
+  .syfe-footer__app-links {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: $breakpoint-sm) {
+  .syfe-footer__top-section,
+  .syfe-footer__license-section {
+    padding: $spacing-inset-l 0px;
+  }
+
+  .syfe-footer__links {
+    display: block;
+    margin-bottom: $spacing-stack-m;
+  }
+
+  .syfe-footer__signup,
+  .syfe-footer__smedia-caption {
+    display: none;
+  }
+}

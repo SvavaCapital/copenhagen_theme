@@ -1,0 +1,52 @@
+$hamburger-dash-thickness: .1rem;
+$hamburger-dash-spacing: .15rem;
+$hamburger-horizontal-padding: $header-height-mobile/2.5;
+
+.syfe-header-nav-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $header-height-mobile;
+  height: $header-height-mobile;
+  z-index: z("header-nav", "icon");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 $hamburger-horizontal-padding;
+}
+
+.syfe-header-nav-icon span {
+  background: $header-color-link;
+  transition: $transition-time-quick;
+  line-height: $hamburger-dash-thickness;
+  margin: $hamburger-dash-spacing/2 0;
+}
+
+.syfe-header-nav-icon span::after {
+  content: "-"; // need to add some content to render the element
+  color: transparent;
+}
+
+.syfe-header-nav-icon--active {
+  position: fixed; // to stop from scrolling with page
+
+  span {
+    $dash-translate: $hamburger-dash-spacing + $hamburger-dash-thickness;
+    &:nth-child(1) {
+      transform: translateY($dash-translate) rotate(45deg);
+    }
+    &:nth-child(2) {
+      transform: rotateY(90deg);
+    }
+    &:nth-child(3) {
+      transform: translateY(-$dash-translate) rotate(-45deg);
+    }
+  }
+}
+
+
+@media (min-width: $breakpoint-xl) {
+  .syfe-header-nav-icon {
+    display: none;
+  }
+}

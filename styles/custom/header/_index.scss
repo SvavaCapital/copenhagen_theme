@@ -1,0 +1,150 @@
+$header-logo-width: 4.19rem;
+$header-nav-padding-vertical: $spacing-inset-l;
+$header-nav-padding-horizontal: $spacing-inset-l;
+
+$header-color-background: $color-primary;
+$header-color-background-active: rgba($color-primary-700, 0.12);
+// $header-color-border-active: $color-primary-700;
+$header-color-link: $light-sand;
+$header-color-link-active: $extra-light-sand;
+$header-color-dropdown-title-text: $color-secondary-300;
+$header-color-dropdown-title-text-active: $color-secondary;
+$header-color-dropdown-description-text: $color-surface-100;
+
+
+.syfe-header-placeholder {
+  height: $header-height-mobile;
+}
+
+.syfe-header {
+  background: $header-color-background;
+  z-index: z("header-nav", "sheet");
+  transition: margin-top 0.3s ease;
+}
+
+.syfe-header--fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.syfe-header--hide {
+  margin-top: -$header-height;
+}
+
+.syfe-header-logo {
+  transition: $transition-time-quick;
+  line-height: $header-height-mobile;
+}
+
+.syfe-header-logo__img {
+  color: $white;
+  width: $header-logo-width;
+  height: auto;
+  max-height: $header-height-mobile/2;
+}
+
+.syfe-header__action-mobile {
+  float: right;
+  margin-right: $header-height-mobile;
+  margin-top: $spacing-inset-s;
+}
+
+.syfe-header__action-mobile-button {
+  padding-left: $spacing-inset-m;
+  padding-right: $spacing-inset-m;
+  height: calc(#{$header-height-mobile} - #{$spacing-inset-m});
+}
+
+.syfe-header-nav {
+  display: inline-block;
+  float: right;
+}
+
+.syfe-header-dropdown__link {
+  padding: $spacing-inset-m $spacing-inset-l;
+  display: block;
+}
+
+.syfe-header-dropdown__title {
+  color: $header-color-dropdown-title-text;
+}
+
+.syfe-header-dropdown__description {
+  color: $header-color-dropdown-description-text;
+}
+
+.syfe-header-dropdown__link:hover {
+  .syfe-header-dropdown__title {
+    color: $header-color-dropdown-title-text-active;
+  }
+}
+
+.syfe-header-dropdown__item {
+  margin-left: $spacing-inset-s;
+}
+
+.syfe-button--header {
+  width: 100%;
+}
+
+
+// media type is mandatory when using the `not` keyword
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+@media not all and (min-width: $breakpoint-xl) {
+  .syfe-header-dropdown__description {
+    display: none;
+  }
+}
+
+
+@media (min-width: $breakpoint-xl) {
+  .syfe-header-placeholder {
+    height: $header-height;
+  }
+
+  .syfe-header__container {
+    display: flex;
+  }
+
+  .syfe-header-logo {
+    line-height: $header-height;
+  }
+
+  .syfe-header-logo__img {
+    max-height: $header-height/2;
+  }
+
+  .syfe-header__action-mobile {
+    display: none;
+  }
+
+  .syfe-button--header {
+    min-width: 13.75rem;
+    width: auto;
+  }
+
+  .syfe-header-dropdown__item {
+    margin-left: 0;
+  }
+
+  .syfe-header-nav {
+    flex: 1;
+    float: none;
+    width: calc(100% - #{$header-logo-width});
+  }
+
+  .syfe-header-dropdown {
+    background: $header-color-background;
+    position: absolute;
+    z-index: z("header-nav", "dropdown");
+    width: 350px;
+  }
+  .syfe-header-dropdown--blog, .syfe-header-dropdown--portfolios {
+    width: 200px;
+  }
+}
+
+
+@import './header-nav-icon';
+@import './header-nav-menu';

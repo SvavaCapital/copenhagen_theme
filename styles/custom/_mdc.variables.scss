@@ -1,0 +1,111 @@
+/**
+ * contains all the material theme overrides
+**/
+@import './primitives/colors';
+@import './primitives/typography';
+@import './primitives/font';
+@import './settings.variables';
+
+
+/* theme color variables */
+$mdc-theme-primary: $color-primary;
+$mdc-theme-secondary: $color-secondary;
+$mdc-theme-accent: $color-accent;
+$mdc-theme-surface: $color-surface;
+
+
+/* typography variables */
+$mdc-typography-font-family: $font-family-primary;
+
+$mdc-typography-styles-headline1: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-heading1,
+  line-height: $line-height-heading,
+  letter-spacing: $letter-spacing-heading1
+);
+
+$mdc-typography-styles-headline2: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-heading2,
+  line-height: $line-height-heading,
+  letter-spacing: $letter-spacing-heading2
+);
+
+$mdc-typography-styles-headline3: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-heading3,
+  line-height: $line-height-heading,
+  letter-spacing: $letter-spacing-heading3
+);
+
+$mdc-typography-styles-headline4: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-heading4,
+  line-height: $line-height-heading,
+  letter-spacing: $letter-spacing-heading4
+);
+
+$mdc-typography-styles-headline5: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-heading5,
+  line-height: $line-height-heading,
+  letter-spacing: $letter-spacing-heading5
+);
+
+$mdc-typography-styles-headline6: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-heading6,
+  line-height: $line-height-heading,
+  letter-spacing: $letter-spacing-heading6
+);
+
+$mdc-typography-styles-subtitle1: (
+  font-size: $font-size-subtitle1,
+  font-weight: $font-weight-medium,
+  line-height: $line-height-subtitle1,
+  letter-spacing: $letter-spacing-subtitle1
+);
+
+$mdc-typography-styles-subtitle2: (
+  font-family: $font-family-secondary,
+  font-size: $font-size-subtitle2,
+  line-height: $line-height-subtitle2,
+  letter-spacing: $letter-spacing-subtitle2
+);
+
+$mdc-typography-styles-body1: (
+  font-size: $font-size-body1,
+  line-height: $line-height-body1,
+  letter-spacing: $letter-spacing-body1
+);
+
+$mdc-typography-styles-body2: (
+  font-size: $font-size-body2,
+  line-height: $line-height-body2,
+  letter-spacing: $letter-spacing-body2
+);
+
+$mdc-typography-styles-caption: (
+  font-size: $font-size-caption,
+  line-height: $line-height-caption,
+  letter-spacing: $letter-spacing-caption
+);
+
+$mdc-typography-styles-button: (
+  font-size: $font-size-button,
+  font-weight: $font-weight-medium,
+  line-height: $line-height-button,
+  letter-spacing: $letter-spacing-button,
+  text-transform: none
+);
+
+$mdc-typography-styles-overline: (
+  font-size: $font-size-overline,
+  line-height: $line-height-overline,
+  letter-spacing: $letter-spacing-overline
+);
+
+
+
+/* component variables overrides */
+$mdc-button-height: $field-height-m;

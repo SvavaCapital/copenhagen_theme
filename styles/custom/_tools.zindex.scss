@@ -1,0 +1,13 @@
+
+// https://www.sitepoint.com/better-solution-managing-z-index-sass/
+
+@function z($layers...) {
+  $map: $z-indexes; // $z-indexes is defined in settings
+  @each $layer in $layers {
+    @if not map-has-key($map, $layer) {
+      @error "No layer found for `#{$layer}` in $z-layers map.";
+    }
+    $map: map-get($map, $layer);
+  }
+  @return $map;
+}

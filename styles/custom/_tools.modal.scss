@@ -1,0 +1,25 @@
+/**
+ * Helper for displaying modals.
+ *
+ * Note: Modal elements should be `block`s (`block` as in BEM), and have a
+ * `__container` div as their only child. All content should be placed in this
+ * container.
+ */
+@mixin modal($layers...) {
+  // cover the entire viewport
+  position: fixed;
+  top: 0;
+  right:0;
+  bottom: 0;
+  left: 0;
+
+  overflow: auto;
+  z-index: z($layers...);
+
+  &__container {
+    min-width: $breakpoint-xs;
+
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+  }
+}

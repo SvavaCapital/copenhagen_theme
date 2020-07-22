@@ -1,0 +1,220 @@
+@import './primitives/colors';
+@import './primitives/typography';
+@import './primitives/font';
+@import './primitives/spacing';
+@import './primitives/clipping';
+
+/* new variable definitions: start */
+// global variables
+$spacing-inset-s: $spacing-50;
+$spacing-inset-m: $spacing-100;
+$spacing-inset-l: $spacing-200;
+$spacing-inset-xl: $spacing-300;
+$spacing-inset-xxl: $spacing-400;
+$spacing-inset-xxxl: $spacing-500;
+
+$spacing-stack-s: $spacing-50;
+$spacing-stack-m: $spacing-100;
+$spacing-stack-l: $spacing-200;
+$spacing-stack-xl: $spacing-300;
+$spacing-stack-xxl: $spacing-400;
+$spacing-stack-xxxl: $spacing-500;
+
+$spacing-inline-s: $spacing-50;
+$spacing-inline-m: $spacing-100;
+$spacing-inline-l: $spacing-200;
+$spacing-inline-xl: $spacing-300;
+$spacing-inline-xxl: $spacing-400;
+$spacing-inline-xxxl: $spacing-500;
+
+$clip-height-s: $clipping-50;
+$clip-height-m: $clipping-100;
+$clip-height-l: $clipping-200;
+$clip-height-xl: $clipping-300;
+
+$field-height-s: 48px;
+$field-height-m: 50px;
+$field-height-l: 56px;
+
+/* syfe color palette */
+$color-primary-50: $blue-50;
+$color-primary-100: $blue-100;
+$color-primary-200: $blue-200;
+$color-primary-300: $blue-300;
+$color-primary-400: $blue-400;
+$color-primary-500: $blue-500;
+$color-primary-600: $blue-600;
+$color-primary-700: $blue-700;
+$color-primary-800: $blue-800;
+$color-primary: $blue-900;
+
+$color-secondary-50: $golden-50;
+$color-secondary-100: $golden-100;
+$color-secondary-200: $golden-200;
+$color-secondary-300: $golden-300;
+$color-secondary-400: $golden-400;
+$color-secondary: $golden-500;
+$color-secondary-600: $golden-600;
+$color-secondary-700: $golden-700;
+$color-secondary-800: $golden-800;
+$color-secondary-900: $golden-900;
+
+$color-accent-50: $red-50;
+$color-accent-100: $red-100;
+$color-accent-200: $red-200;
+$color-accent-300: $red-300;
+$color-accent-400: $red-400;
+$color-accent: $red-500;
+$color-accent-600: $red-600;
+$color-accent-700: $red-700;
+$color-accent-800: $red-800;
+$color-accent-900: $red-900;
+
+$color-surface-100: $white-600;
+$color-surface-300: $white;
+$color-surface: $gray-100;
+$color-surface-700: $gray-200;
+
+$color-text-on-primary-medium-emphasis: $dark-sand;
+$color-text-on-primary-high-emphasis: $light-sand;
+
+$color-text-on-secondary-medium-emphasis: $black;
+$color-text-on-secondary-high-emphasis: $black;
+
+$color-text-on-accent-medium-emphasis: $white-600;
+$color-text-on-accent-high-emphasis: $white;
+
+$color-text-on-dark-medium-emphasis: $white-600;
+
+$color-text-disabled-on-light: $black-400;
+
+$color-success-text: #7cc576;
+$color-error-text: $red-300;
+
+
+/* marketing site variables */
+$header-height: 6.25rem;
+$header-height-mobile: 3.5rem;
+$risk-assessment-header-height: $header-height-mobile;
+
+// background: dark
+$site-color-background-dark-start: #111c2e;
+$site-color-background-dark-end: #000918;
+$site-color-heading-on-dark: $light-sand;
+$site-color-text-on-dark-medium-emphasis: $color-primary-200;
+$site-color-text-on-dark-high-emphasis: $color-primary-100;
+
+// background: surface
+$site-color-background-surface-medium: $color-surface;
+$site-color-background-surface-light: $color-surface-300;
+
+$site-color-heading-on-surface: $color-primary;
+$site-color-text-on-surface-medium-emphasis: #616161;
+$site-color-text-on-surface-high-emphasis: #333333;
+
+// background white
+$site-color-text-on-white-medium-emphasis: #616161;
+$site-color-text-on-white-high-emphasis: #333333;
+
+
+$site-color-tab-background-dark: $color-primary-800;
+$site-color-tab-border-on-background-dark: $light-sand;
+$site-color-tab-text-on-background-dark: $light-sand;
+
+$site-color-tab-background-light: $white;
+$site-color-tab-border-on-background-light: $blue-700;
+$site-color-tab-text-on-background-light: $blue-700;
+
+$site-color-background-highlight-on-primary: $black-300;
+
+$dashboard-color-heading: $light-sand;
+$dashboard-color-text-medium-emphasis: $color-primary-200;
+$dashboard-color-text-high-emphasis: $color-primary-100;
+
+$dashboard-card-background: $color-primary;
+$dashboard-card-background-hover: $color-primary-800;
+
+$site-color_stocks: #7cc576;
+$site-color_bonds: #48658a;
+$site-color_reit: #4babc0;
+$site-color_gold: #ffc760;
+
+$border-radius-s: 2px;
+$border-radius-m: 4px;
+$border-radius-l: 8px;
+
+/* new variable definitions: end */
+
+
+/* colors */
+$brand-blue: #2c4157; // #22A7F0 => hsl = 201 87 54
+$dark-blue: #0F8DD2; // #0F8DD2 => hsl = 201 87 44
+$light-blue: #53BBF3; // #53BBF3 => hsl = 201 87 64
+$white: #fff;
+$brand-green: #a1cc3a;
+$brand-dark-blue: #212b36;
+
+
+/* syfe v1 colors */
+$brand-text-green: #95d20c;
+
+$success-green-text: #8ec022;
+
+$gray: #868e96;
+$light-gray: #f1f3f5;
+$extra-light-gray: #f8f9fa;
+$text-color: #212529;
+
+$landing-page-font-color: $brand-dark-blue;
+
+$portfolio-page-border-color: #f0f1f2;
+$portfolio-page-font-color: #3f576e;
+
+/* dashboard variables */
+$dashboard-grey-font-color: #828d99;
+$dashboard-background-color: #131b24;
+$dashboard-success-green: #00d47e;
+$dashboard-danger-red: #df4926;
+
+$dashboard-element-green: #22e5ab;
+$dashboard-ligh-grey-font-color: #b7cbd2;
+$dashboard-blue: #7ad7f5;
+$dashboard-dark-green: #13444f;
+
+/* borders */
+$border-thickness: 1px;
+
+
+/* section gaps */
+$section-gap-l: 10rem;
+$section-gap-m: 5rem;
+$section-gap-s: 2.5rem;
+$section-gap-xs: 1.25rem;
+
+
+/* transitions */
+$transition-time-quick: .2s;
+$transition-time-slow: .4s;
+
+
+/* z-indexes */
+$z-indexes: (
+  "header-nav": (
+    "dropdown": 19103,
+    "icon": 19102,
+    "sheet": 19101,
+  )
+);
+
+
+/* responsive breakpoints */
+$breakpoint-xs: 20em; // xs: portrait phones (20em => 320px)
+$breakpoint-sm: 36em; // sm: landscape phones (36em => 576px)
+$breakpoint-md: 48em; // md: tablets (48em => 768px)
+$breakpoint-lg: 62em; // md: desktops (62em => 992px)
+$breakpoint-xl: 75em; // xl: large desktops (75em => 1200px)
+$breakpoint-xxl: 90em; // xl: large desktops (90em => 1440px)
+
+
+/*bootstrap overrides*/
+$font-family-base: Montserrat, sans-serif !default;

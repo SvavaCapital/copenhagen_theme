@@ -1,0 +1,134 @@
+.syfe-header-nav-menu {
+  background: $header-color-background;
+  padding-left: $header-nav-padding-horizontal;
+}
+
+.syfe-header-nav-menu__list-item:hover {
+  background: $header-color-background-active;
+}
+
+.syfe-header-nav-menu__link {
+  color: $header-color-link;
+  display: block;
+  padding: $spacing-inset-l;
+  cursor: pointer;
+}
+
+.syfe-header-nav-menu__caret {
+  margin-left: $spacing-inset-s;
+}
+
+.syfe-header-nav-menu__link:hover {
+  color: $header-color-link-active;
+}
+
+.syfe-header-nav-menu__link--active {
+  color: $header-color-link-active;
+  background: $header-color-background-active;
+  border-left: 2px solid;
+}
+
+.syfe-header-nav-menu__link-icon {
+  width: 1em;
+  height: 1em;
+  margin: 0 $spacing-inset-m;
+}
+
+
+.syfe-header-nav-menu__actions {
+  display: block;
+  padding: 0 $header-nav-padding-horizontal $header-nav-padding-vertical 0;
+
+  .syfe-header-nav-menu__list {
+    margin-right: $spacing-inset-m;
+  }
+}
+
+.syfe-header-nav-menu__action-item {
+  margin-right: $header-nav-padding-horizontal;
+  flex: 1;
+}
+
+
+// media type is mandatory when using the `not` keyword
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+@media not all and (min-width: $breakpoint-xl) {
+  .syfe-header-nav-menu {
+    @include modal("header-nav", "sheet");
+    transition: $transition-time-slow;
+    transform: translate(100%);
+  }
+  .syfe-header-nav-menu--active {
+    transform: translate(0);
+  }
+
+  .syfe-header-nav-menu__list {
+    padding: $header-height-mobile 0 $header-nav-padding-horizontal;
+  }
+  .syfe-header-nav-menu__actions {
+    .syfe-header-nav-menu__list {
+      padding-top: 0;
+    }
+  }
+
+  .syfe-header-nav-menu__list-item--close {
+    .syfe-header-nav-menu__caret {
+      transform: rotate(180deg);
+    }
+    .syfe-header-dropdown {
+      display: none;
+    }
+  }
+}
+
+
+@media (min-width: $breakpoint-xl) {
+  .syfe-header-nav-menu__actions {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  .syfe-header-nav-menu__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .syfe-header-nav-menu__container--single {
+    justify-content: flex-end;
+  }
+
+  .syfe-header-nav-menu__list {
+    display: flex;
+  }
+
+  .syfe-header-nav-menu__list-item {
+    position: relative;
+    transition: $transition-time-quick;
+    width: max-content;
+  }
+
+  .syfe-header-nav-menu__link {
+    padding: $spacing-inset-xl $spacing-inset-m;
+  }
+
+  .syfe-header-nav-menu__link--active {
+    border-left: none;
+    border-bottom: 2px solid;
+  }
+
+  .syfe-header-nav-menu__list-item:not(:hover){
+    .syfe-header-nav-menu__caret {
+      transform: rotate(180deg);
+    }
+    .syfe-header-dropdown {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .syfe-header-nav-menu__link {
+    // padding: $spacing-inset-xl $spacing-inset-l;
+  }
+}
