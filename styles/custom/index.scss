@@ -5,120 +5,91 @@
 
 @import './mdc.variables';
 
-// @import "@material/typography/mdc-typography";
-// @import "@material/textfield/mdc-text-field";
-@import "@material/button/mdc-button";
-// @import '@material/list/mdc-list';
-
-
-
-
+@import '@material/typography/mdc-typography';
+@import '@material/button/mdc-button';
+@import '@material/list/mdc-list';
 // contain all rules here so that they don't interfere with rest of the theme
 .syfe {
+  // elements
+  a {
+    text-decoration: none;
+    color: $golden-300;
+  }
 
+  a:active {
+    text-decoration: none;
+    color: $golden-400;
+  }
 
+  a:hover {
+    text-decoration: none;
+    color: $golden-200;
+  }
 
-// elements
-a {
-  text-decoration: none;
-  color: $golden-300;
+  p {
+    margin-bottom: 0px;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  // trumps
+  .syfe-hidden {
+    display: none !important;
+  }
+
+  // mdc overrides
+  .syfe-button-primary {
+    @include mdc-button-container-fill-color($color-accent);
+    @include mdc-button-ink-color($color-surface-300);
+  }
+
+  .syfe-button-primary--large {
+    height: $field-height-l;
+  }
+
+  // syfe components
+  .syfe-svg-caret {
+    margin-left: 4px;
+    margin-bottom: 2px;
+  }
+
+  // header
+  @import './header/index';
 }
 
-a:active {
-  text-decoration: none;
-  color: $golden-400;
-}
-
-a:hover {
-  text-decoration: none;
-  color: $golden-200;
-}
-
-p {
-  margin-bottom: 0px;
-}
-
-img {
-  vertical-align: middle;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-svg {
-  vertical-align: middle;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-
-
-// trumps
-.syfe-hidden {
-  display: none !important;
-}
-
-
-
-// mdc overrides
-.syfe-button-primary {
-  @include mdc-button-container-fill-color($color-accent);
-  @include mdc-button-ink-color($color-surface-300);
-}
-
-.syfe-button-primary--large {
-  height: $field-height-l;
-}
-
-// .syfe-input-primary {
-//   @include mdc-text-field-outline-color($color-primary-200);
-//   @include mdc-text-field-focused-outline-color($color-primary);
-//   @include mdc-text-field-ink-color($color-text-on-secondary-medium-emphasis);
-//   @include mdc-text-field-caret-color($color-primary);
-
-//   .mdc-text-field__input {
-//     padding: 18.5px 14px;
-//     font-size: $font-size-body1;
-//     font-weight: 400;
-//     height: $field-height-l;
-//   }
-
-//   .mdc-floating-label {
-//     font-size: $font-size-body1;
-//     font-weight: 400;
-//   }
-// }
-
-
-
-// syfe components
-.syfe-svg-caret {
-  margin-left: 4px;
-  margin-bottom: 2px;
-}
-
-
-
-// header
-@import './header/index';
-
-
-
-// footer
-@import './footer/index';
-
-
-
+// overriding header for preview mode
+#preview-bar-container ~ .syfe {
+  .syfe-header--fixed,
+  .syfe-header-nav-menu--active,
+  .syfe-header-nav-icon--active {
+    top: 50px;
+  }
 }

@@ -144,25 +144,26 @@ document.addEventListener('DOMContentLoaded', function() {
     toggle.focus();
   }
 
-  var burgerMenu = document.querySelector('.header .menu-button');
-  var userMenu = document.querySelector('#user-nav');
+  // We don't use the default header
+  // var burgerMenu = document.querySelector('.header .menu-button');
+  // var userMenu = document.querySelector('#user-nav');
 
-  burgerMenu.addEventListener('click', function(e) {
-    e.stopPropagation();
-    toggleNavigation(this, userMenu);
-  });
+  // burgerMenu.addEventListener('click', function(e) {
+  //   e.stopPropagation();
+  //   toggleNavigation(this, userMenu);
+  // });
 
 
-  userMenu.addEventListener('keyup', function(e) {
-    if (e.keyCode === ESCAPE) {
-      e.stopPropagation();
-      closeNavigation(burgerMenu, this);
-    }
-  });
+  // userMenu.addEventListener('keyup', function(e) {
+  //   if (e.keyCode === ESCAPE) {
+  //     e.stopPropagation();
+  //     closeNavigation(burgerMenu, this);
+  //   }
+  // });
 
-  if (userMenu.children.length === 0) {
-    burgerMenu.style.display = 'none';
-  }
+  // if (userMenu.children.length === 0) {
+  //   burgerMenu.style.display = 'none';
+  // }
 
   // Toggles expanded aria to collapsible elements
   var collapsible = document.querySelectorAll('.collapsible-nav, .collapsible-sidebar');
@@ -397,4 +398,38 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Custom - header
+
+  var syfeHeaderIcon = document.querySelector('.syfe-header-nav-icon')
+  var syfeHeaderMenu = document.querySelector('.syfe-header-nav-menu')
+
+  syfeHeaderIcon.addEventListener('click', function () {
+    syfeHeaderIcon.classList.toggle('syfe-header-nav-icon--active');
+    syfeHeaderMenu.classList.toggle('syfe-header-nav-menu--active');
+  })
+
+  var syfeHeaderMenuItem = document.querySelector('.syfe-header-nav-menu__list-item')
+
+  syfeHeaderMenuItem.addEventListener('click', function () {
+    syfeHeaderMenuItem.classList.toggle('syfe-header-nav-menu__list-item--close');
+  })
+
+  var syfeHeader = document.querySelector('.syfe-header');
+  var syfeHeaderScrollPosition = 0;
+
+  window.scroll(function () {
+    var newScrollPosition = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop);
+    if (
+      // MacOS and iOS have "over-scrolling" to produce "bounce effect"
+      newScrollPosition >= 0 &&
+      Math.abs(newScrollPosition - syfeHeaderScrollPosition) > 20
+    ) {
+      (newScrollPosition > syfeHeaderScrollPosition)
+        ? syfeHeader.classList.add('syfe-header--hide')
+        : syfeHeader.classList.remove('syfe-header--hide');
+      syfeHeaderScrollPosition = newScrollPosition;
+    }
+  });
+
 });
